@@ -19,22 +19,33 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     DataSource dataSource;
 
-    @Override
+    // With default Schema and hardcoded user
+
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.jdbcAuthentication()
+//                .dataSource(dataSource)
+//                .withDefaultSchema()
+//                .withUser(
+//                        User.withUsername("user")
+//                                .password("1234")
+//                                .roles("USER")
+//                )
+//                .withUser(
+//                        User.withUsername("admin")
+//                                .password("1234")
+//                                .roles("ADMIN")
+//                );
+//    }
+//
+//
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
-                .dataSource(dataSource)
-                .withDefaultSchema()
-                .withUser(
-                        User.withUsername("user")
-                                .password("1234")
-                                .roles("USER")
-                )
-                .withUser(
-                        User.withUsername("admin")
-                                .password("1234")
-                                .roles("ADMIN")
-                );
+                .dataSource(dataSource);
+
     }
+
+
 
 
     @Override
