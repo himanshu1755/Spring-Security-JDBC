@@ -1,1 +1,3 @@
 com/spring/securityJDBC/SecurityJdbcApplication.class
+com/spring/securityJDBC/security/SecurityConfiguration.class
+com/spring/securityJDBC/controller/Controller.class
